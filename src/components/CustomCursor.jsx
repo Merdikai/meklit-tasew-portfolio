@@ -1,89 +1,118 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 export default function CustomCursor() {
-  const [position, setPosition] = useState({ x: -100, y: -100 });
-  const [trailingPos, setTrailingPos] = useState({ x: -100, y: -100 });
-  const [isPointer, setIsPointer] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
+  const glowRef = useRef(null);
+  const ringRef = useRef(null);
+  const dotRef = useRef(null);
 
   useEffect(() => {
-    // Only enable on desktop / pointer devices
+    // Only enable on desktop pointer devices
     if (window.matchMedia('(pointer: coarse)').matches) {
       return;
     }
 
+    let mouseX = -200;
+    let mouseY = -200;
+    let ringX = -200;
+    let ringY = -200;
+    let isVisible = false;
+    let isPointer = false;
+    let animId;
+
     const handleMouseMove = (e) => {
-      setPosition({ x: e.clientX, y: e.clientY });
-      setIsVisible(true);
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+
+      if (!isVisible) {
+        isVisible = true;
+        if (glowRef.current) glowRef.current.style.opacity = '0.22';
+        if (ringRef.current) ringRef.current.style.opacity = '1';
+        if (dotRef.current) dotRef.current.style.opacity = '1';
+      }
 
       const target = e.target;
-      const clickable = target.closest('button, a, input, textarea, select, [role="button"], .clickable');
-      setIsPointer(!!clickable);
+      const clickable = target && target.closest('button, a, input, textarea, select, [role="button"], .clickable');
+      const nextIsPointer = !!clickable;
+
+      if (nextIsPointer !== isPointer) {
+        isPointer = nextIsPointer;
+        if (ringRef.current) {
+          if (isPointer) {
+            ringRef.current.style.width = '48px';
+            ringRef.current.style.height = '48px';
+            ringRef.current.style.backgroundColor = 'rgba(200, 164, 93, 0.16)';
+            ringRef.current.style.borderColor = '#E5C483';
+          } else {
+            ringRef.current.style.width = '32px';
+            ringRef.current.style.height = '32px';
+            ringRef.current.style.backgroundColor = 'transparent';
+            ringRef.current.style.borderColor = 'rgba(200, 164, 93, 0.55)';
+          }
+        }
+        if (dotRef.current) {
+          dotRef.current.style.width = isPointer ? '8px' : '5px';
+          dotRef.current.style.height = isPointer ? '8px' : '5px';
+        }
+      }
     };
 
     const handleMouseLeave = () => {
-      setIsVisible(false);
+      isVisible = false;
+      if (glowRef.current) glowRef.current.style.opacity = '0';
+      if (ringRef.current) ringRef.current.style.opacity = '0';
+      if (dotRef.current) dotRef.current.style.opacity = '0';
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    document.addEventListener('mouseleave', handleMouseLeave);
+    const renderLoop = () => {
+      // Direct hardware-accelerated transform interpolation (0 React re-renders)
+      ringX += (mouseX - ringX) * 0.18;
+      ringY += (mouseY - ringY) * 0.18;
+
+      if (dotRef.current) {
+        dotRef.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+      }
+      if (ringRef.current) {
+        ringRef.current.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%)`;
+      }
+      if (glowRef.current) {
+        glowRef.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+      }
+
+      animId = requestAnimationFrame(renderLoop);
+    };
+
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
+    document.addEventListener('mouseleave', handleMouseLeave, { passive: true });
+    animId = requestAnimationFrame(renderLoop);
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseleave', handleMouseLeave);
+      cancelAnimationFrame(animId);
     };
   }, []);
-
-  // Smooth lagging trailing ring
-  useEffect(() => {
-    let animationFrame;
-    const updateTrailing = () => {
-      setTrailingPos((prev) => ({
-        x: prev.x + (position.x - prev.x) * 0.15,
-        y: prev.y + (position.y - prev.y) * 0.15,
-      }));
-      animationFrame = requestAnimationFrame(updateTrailing);
-    };
-    animationFrame = requestAnimationFrame(updateTrailing);
-    return () => cancelAnimationFrame(animationFrame);
-  }, [position]);
-
-  if (!isVisible) return null;
 
   return (
     <>
       {/* Ambient background glow spotlight */}
       <div
-        className="pointer-events-none fixed z-30 transition-opacity duration-300 -translate-x-1/2 -translate-y-1/2 w-[420px] h-[420px] rounded-full opacity-20 blur-[90px] mix-blend-screen"
+        ref={glowRef}
+        className="pointer-events-none fixed top-0 left-0 z-30 w-[420px] h-[420px] rounded-full opacity-0 blur-[90px] mix-blend-screen transition-opacity duration-300 will-change-transform"
         style={{
-          left: `${position.x}px`,
-          top: `${position.y}px`,
           background: 'radial-gradient(circle, #C8A45D 0%, rgba(37, 78, 153, 0.4) 60%, transparent 100%)',
         }}
       />
 
       {/* Trailing golden ring */}
       <div
-        className="pointer-events-none fixed z-50 rounded-full border border-court-gold/60 -translate-x-1/2 -translate-y-1/2 transition-[width,height,background-color,border-color] duration-200"
-        style={{
-          left: `${trailingPos.x}px`,
-          top: `${trailingPos.y}px`,
-          width: isPointer ? '48px' : '32px',
-          height: isPointer ? '48px' : '32px',
-          backgroundColor: isPointer ? 'rgba(200, 164, 93, 0.15)' : 'transparent',
-          borderColor: isPointer ? '#E5C483' : 'rgba(200, 164, 93, 0.5)',
-        }}
+        ref={ringRef}
+        className="pointer-events-none fixed top-0 left-0 z-50 rounded-full border border-court-gold/60 w-[32px] h-[32px] opacity-0 transition-[width,height,background-color,border-color] duration-150 will-change-transform"
       />
 
       {/* Center sharp dot */}
       <div
-        className="pointer-events-none fixed z-50 rounded-full bg-court-gold -translate-x-1/2 -translate-y-1/2 shadow-[0_0_10px_#C8A45D]"
-        style={{
-          left: `${position.x}px`,
-          top: `${position.y}px`,
-          width: isPointer ? '8px' : '5px',
-          height: isPointer ? '8px' : '5px',
-        }}
+        ref={dotRef}
+        className="pointer-events-none fixed top-0 left-0 z-50 rounded-full bg-court-gold w-[5px] h-[5px] opacity-0 shadow-[0_0_10px_#C8A45D] will-change-transform"
       />
     </>
   );
