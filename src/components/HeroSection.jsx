@@ -2,6 +2,7 @@ import React from 'react';
 import { 
   Scale, 
   Award, 
+  GraduationCap, 
   ExternalLink, 
   MapPin, 
   Send, 
