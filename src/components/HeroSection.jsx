@@ -156,8 +156,8 @@ export default function HeroSection() {
           {/* Right Column: Executive Office Portrait with Golden Scales Peeking on the Right */}
           <div className="lg:col-span-5 flex flex-col items-center justify-center relative">
             
-            {/* Majestic Golden Pedestal Peeking Gracefully to the Right of the Portrait */}
-            <div className="absolute left-1/2 top-1/2 -translate-y-1/2 translate-x-[45px] sm:translate-x-[70px] lg:translate-x-[95px] xl:translate-x-[115px] w-[560px] sm:w-[640px] lg:w-[720px] pointer-events-none opacity-[0.95] select-none z-0 filter drop-shadow-[0_0_65px_rgba(200,164,93,0.5)]">
+            {/* Majestic Golden Pedestal Peeking Gracefully to the Right of the Portrait (Subdued, serene golden glow) */}
+            <div className="absolute left-1/2 top-1/2 -translate-y-1/2 translate-x-[45px] sm:translate-x-[70px] lg:translate-x-[95px] xl:translate-x-[115px] w-[540px] sm:w-[620px] lg:w-[680px] pointer-events-none opacity-[0.80] select-none z-0 filter drop-shadow-[0_0_35px_rgba(200,164,93,0.22)]">
               <PhotorealisticGoldenPedestal isBackground={true} />
             </div>
 

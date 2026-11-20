@@ -6,7 +6,6 @@ import RealisticCertificateCard from '../RealisticCertificateCard';
 export default function ThreeCertificatesCarousel({ onSelectCert }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-  const [isHovered, setIsHovered] = useState(false);
   const [mouseOffset, setMouseOffset] = useState({ x: 0, y: 0 });
   const [isMobile, setIsMobile] = useState(false);
   const timerRef = useRef(null);
@@ -28,21 +27,21 @@ export default function ThreeCertificatesCarousel({ onSelectCert }) {
     setActiveIndex((prev) => (prev === total - 1 ? 0 : prev + 1));
   };
 
-  // Gentle, continuous slow auto-rotation (infinite carousel cycle)
+  // Stately, continuous infinite auto-rotation across judicial credentials
   useEffect(() => {
-    if (!isAutoPlaying || isHovered) {
+    if (!isAutoPlaying) {
       if (timerRef.current) clearInterval(timerRef.current);
       return;
     }
 
     timerRef.current = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % total);
-    }, 4200); // Stately 4.2s pacing: unhurried and dignified
+    }, 3200); // Rhythmic, dignified 3.2s rotation pace
 
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-  }, [isAutoPlaying, isHovered, total]);
+  }, [isAutoPlaying, total]);
 
   // Subtle 3D mouse parallax
   const handleMouseMove = (e) => {
@@ -54,18 +53,16 @@ export default function ThreeCertificatesCarousel({ onSelectCert }) {
 
   const handleMouseLeave = () => {
     setMouseOffset({ x: 0, y: 0 });
-    setIsHovered(false);
   };
 
   return (
     <div 
       className="relative w-full py-8 overflow-hidden flex flex-col items-center select-none"
       onMouseMove={handleMouseMove}
-      onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={handleMouseLeave}
     >
       
-      {/* 3D Cylindrical Arc Stage: Expanded to max-w-6xl for spacious breathing room */}
+      {/* 3D Cylindrical Arc Stage: Curved layout bringing outer cards closer */}
       <div
         className="relative w-full max-w-6xl h-[470px] sm:h-[490px] flex items-center justify-center"
         style={{ 
@@ -87,14 +84,27 @@ export default function ThreeCertificatesCarousel({ onSelectCert }) {
 
           if (!isVisible) return null;
 
-          // Spacious 3D positioning: expanded offset from 250px -> 360px on desktop (260px on mobile)
-          const rotateY = offset * 22 + (isActive ? mouseOffset.x * 0.4 : 0);
+          // Non-linear 3D cylindrical arc spacing:
+          // Center (offset 0): 0px
+          // Immediate neighbors (offset ±1): ±285px desktop (±210px mobile)
+          // Outer credentials (offset ±2): ±485px desktop (±335px mobile)
+          // Gap between card 1 and 2 (and 4 and 5) is 200px, bringing them closer together!
+          let translateX = 0;
+          if (offset !== 0) {
+            const sign = Math.sign(offset);
+            const abs = Math.abs(offset);
+            if (abs === 1) {
+              translateX = sign * (isMobile ? 210 : 285);
+            } else {
+              translateX = sign * (isMobile ? 335 : 485);
+            }
+          }
+
+          const rotateY = -offset * 20 + (isActive ? mouseOffset.x * 0.4 : 0);
           const rotateX = isActive ? mouseOffset.y * 0.4 : 0;
-          const spacing = isMobile ? 260 : 360;
-          const translateX = offset * spacing;
-          const translateZ = -Math.abs(offset) * 140 + (isActive ? 50 : 0);
-          const scale = isActive ? 1.05 : isDirectNeighbor ? 0.86 : 0.70;
-          const opacity = isActive ? 1.0 : isDirectNeighbor ? 0.65 : 0.28;
+          const translateZ = -Math.abs(offset) * 125 + (isActive ? 50 : 0);
+          const scale = isActive ? 1.05 : isDirectNeighbor ? 0.88 : 0.74;
+          const opacity = isActive ? 1.0 : isDirectNeighbor ? 0.70 : 0.42;
 
           return (
             <div

@@ -32,6 +32,7 @@ export default function PhotorealisticGoldenPedestal({ className = '', isBackgro
 
   useEffect(() => {
     if (videoRef.current) {
+      videoRef.current.playbackRate = 0.85; // Calm, unhurried, serene rotation
       videoRef.current.play().catch(() => {});
     }
   }, []);
@@ -45,12 +46,12 @@ export default function PhotorealisticGoldenPedestal({ className = '', isBackgro
       className={`relative w-full ${isBackground ? 'max-w-none aspect-square' : 'max-w-[540px] aspect-[520/430] cursor-pointer'} flex items-center justify-center select-none ${className}`}
       style={{ perspective: 1200 }}
     >
-      {/* Golden Ambient Aura Behind Pedestal */}
+      {/* Golden Ambient Aura Behind Pedestal - subdued, soft, and gentle */}
       <div 
-        className="absolute inset-0 rounded-full bg-gradient-to-tr from-court-gold/20 via-amber-500/10 to-transparent blur-3xl pointer-events-none transition-opacity duration-700"
+        className="absolute inset-0 rounded-full bg-gradient-to-tr from-court-gold/15 via-amber-500/8 to-transparent blur-3xl pointer-events-none transition-opacity duration-700"
         style={{
-          opacity: isBackground ? 0.4 : isHovered ? 0.9 : 0.6,
-          transform: `scale(${isHovered ? 1.08 : 1.0})`,
+          opacity: isBackground ? 0.22 : isHovered ? 0.5 : 0.32,
+          transform: `scale(${isHovered ? 1.05 : 1.0})`,
         }}
       />
 
@@ -58,7 +59,7 @@ export default function PhotorealisticGoldenPedestal({ className = '', isBackgro
       <div 
         className="absolute bottom-6 w-[360px] h-[36px] rounded-[100%] pointer-events-none transition-all duration-500"
         style={{
-          background: 'radial-gradient(ellipse at center, rgba(212,175,55,0.45) 0%, rgba(200,164,93,0.18) 45%, transparent 75%)',
+          background: 'radial-gradient(ellipse at center, rgba(212,175,55,0.28) 0%, rgba(200,164,93,0.10) 45%, transparent 75%)',
           filter: 'blur(8px)',
           transform: `translateX(${tilt.y * 1.5}px) scaleX(${isHovered ? 1.1 : 1.0})`,
         }}
@@ -73,14 +74,14 @@ export default function PhotorealisticGoldenPedestal({ className = '', isBackgro
             : `perspective(1000px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) scale(${isHovered ? 1.03 : 1})`,
         }}
       >
-        {/* Seamless Photorealistic Video Loop */}
+        {/* Seamless Photorealistic Video Loop (Statically stabilized, zero upward jump, calm pace) */}
         <video
           ref={videoRef}
           autoPlay
           loop
           muted
           playsInline
-          poster="/videos/golden_pedestal_poster.png"
+          poster="/videos/golden_pedestal_calm_poster.png"
           onLoadedData={() => setIsVideoLoaded(true)}
           className="w-full h-full object-contain pointer-events-none transition-opacity duration-500"
           style={{
@@ -88,21 +89,20 @@ export default function PhotorealisticGoldenPedestal({ className = '', isBackgro
             WebkitMaskImage: 'radial-gradient(ellipse 90% 85% at 50% 50%, black 75%, transparent 100%)',
             maskImage: 'radial-gradient(ellipse 90% 85% at 50% 50%, black 75%, transparent 100%)',
             filter: isBackground
-              ? 'brightness(1.06) contrast(1.14)'
+              ? 'brightness(0.90) contrast(1.02)'
               : isHovered 
-              ? 'brightness(1.08) drop-shadow(0 0 35px rgba(234,179,8,0.4))' 
-              : 'brightness(1.02) drop-shadow(0 0 20px rgba(200,164,93,0.25))',
+              ? 'brightness(0.96) drop-shadow(0 0 25px rgba(200,164,93,0.3))' 
+              : 'brightness(0.88) drop-shadow(0 0 15px rgba(200,164,93,0.18))',
           }}
         >
-          <source src="/videos/golden_pedestal_alpha.webm" type="video/webm" />
-          <source src="/videos/golden_pedestal_seamless.webm" type="video/webm" />
-          <source src="/videos/golden_pedestal_seamless.mp4" type="video/mp4" />
+          <source src="/videos/golden_pedestal_calm.webm" type="video/webm" />
+          <source src="/videos/golden_pedestal_calm.mp4" type="video/mp4" />
         </video>
 
         {/* Fallback Poster Image if video is initializing */}
         {!isVideoLoaded && (
           <img
-            src="/videos/golden_pedestal_poster.png"
+            src="/videos/golden_pedestal_calm_poster.png"
             alt="Photorealistic Golden Pedestal with Scales of Justice"
             className="absolute inset-0 w-full h-full object-contain pointer-events-none"
             style={{

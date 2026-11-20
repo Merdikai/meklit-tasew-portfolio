@@ -79,24 +79,23 @@ export default function AmbientScalesWatermark() {
       <div className="absolute w-[680px] lg:w-[880px] h-[680px] lg:h-[880px] rounded-full bg-court-gold/10 blur-[160px] pointer-events-none -translate-y-6" />
 
       {/* Atmospheric Scales of Justice Watermark */}
-      <div className="relative w-[500px] sm:w-[620px] lg:w-[760px] aspect-square flex items-center justify-center select-none mix-blend-screen filter drop-shadow-[0_0_50px_rgba(200,164,93,0.35)]">
+      <div className="relative w-[500px] sm:w-[620px] lg:w-[760px] aspect-square flex items-center justify-center select-none mix-blend-screen filter drop-shadow-[0_0_35px_rgba(200,164,93,0.22)]">
         <video
           ref={videoRef}
           autoPlay
           loop
           muted
           playsInline
-          poster="/videos/golden_pedestal_poster.png"
+          poster="/videos/golden_pedestal_calm_poster.png"
           className="w-full h-full object-contain pointer-events-none"
           style={{
             WebkitMaskImage: 'radial-gradient(ellipse 90% 85% at 50% 50%, black 65%, transparent 100%)',
             maskImage: 'radial-gradient(ellipse 90% 85% at 50% 50%, black 65%, transparent 100%)',
-            filter: 'brightness(1.04) contrast(1.12)',
+            filter: 'brightness(0.90) contrast(1.02)',
           }}
         >
-          <source src="/videos/golden_pedestal_alpha.webm" type="video/webm" />
-          <source src="/videos/golden_pedestal_seamless.webm" type="video/webm" />
-          <source src="/videos/golden_pedestal_seamless.mp4" type="video/mp4" />
+          <source src="/videos/golden_pedestal_calm.webm" type="video/webm" />
+          <source src="/videos/golden_pedestal_calm.mp4" type="video/mp4" />
         </video>
       </div>
     </div>
