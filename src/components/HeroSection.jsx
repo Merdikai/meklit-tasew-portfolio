@@ -125,8 +125,8 @@ export default function HeroSection() {
           {/* Right Column: Executive Office Portrait with Golden Scales Peeking on the Right */}
           <div className="lg:col-span-5 flex flex-col items-center justify-center relative">
             
-            {/* Majestic Golden Pedestal Peeking Gracefully to the Right of the Portrait (Subdued, serene golden glow, zero box) */}
-            <div className="absolute left-1/2 top-1/2 -translate-y-1/2 translate-x-0 sm:translate-x-[60px] lg:translate-x-[95px] xl:translate-x-[115px] w-[340px] sm:w-[480px] lg:w-[620px] pointer-events-none opacity-[0.80] select-none z-0">
+            {/* Majestic Golden Pedestal Peeking Gracefully to the Right of the Portrait (True transparent alpha, zero box, seamless integration) */}
+            <div className="absolute left-1/2 top-1/2 -translate-y-1/2 translate-x-0 sm:translate-x-[60px] lg:translate-x-[95px] xl:translate-x-[115px] w-[340px] sm:w-[480px] lg:w-[620px] pointer-events-none select-none z-0">
               <PhotorealisticGoldenPedestal isBackground={true} />
             </div>
 
@@ -139,7 +139,7 @@ export default function HeroSection() {
                   <source srcSet="/images/executive-desk-hero.webp" type="image/webp" />
                   <img
                     src="/images/executive-desk-hero.jpg"
-                    alt="Judge Meklit Tasew Tabor in Executive Office Chambers"
+                    alt="Assistant Judge Meklit Tasew Tabor in Executive Office Chambers"
                     className="w-full h-full object-cover object-top filter contrast-[1.03] brightness-[0.98] group-hover:scale-105 transition-transform duration-700"
                   />
                 </picture>

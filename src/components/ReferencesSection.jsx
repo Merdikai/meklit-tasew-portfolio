@@ -50,7 +50,7 @@ export default function ReferencesSection() {
             Endorsements &amp; <span className="text-gold-gradient font-serif italic">Bench References</span>
           </h2>
           <p className="text-slate-300 text-base sm:text-lg font-light leading-relaxed">
-            Distinguished judges and prosecutorial officers attesting to Judge Meklit Tasew's judicial ethics, draftsmanship, and dedication to justice.
+            Distinguished judges and prosecutorial officers attesting to Assistant Judge Meklit Tasew's judicial ethics, draftsmanship, and dedication to justice.
           </p>
         </div>
 

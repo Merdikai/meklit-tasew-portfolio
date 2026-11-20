@@ -48,16 +48,21 @@ export default function Navbar() {
     };
   }, [isSidebarOpen]);
 
-  // All key sections of the portfolio
+  // Primary navigation links - Single word, single line, no wrapping
   const navLinks = [
     { label: 'Overview', href: '#overview', icon: Scale },
-    { label: 'Judicial Profile', href: '#about', icon: ShieldCheck },
+    { label: 'Profile', href: '#about', icon: ShieldCheck },
     { label: 'Jurisprudence', href: '#jurisprudence', icon: BookOpen },
-    { label: 'Judicial Record', href: '#experience', icon: Briefcase },
+    { label: 'Record', href: '#experience', icon: Briefcase },
     { label: 'Credentials', href: '#certificates', icon: Award },
     { label: 'Competencies', href: '#skills', icon: Sparkles },
     { label: 'References', href: '#references', icon: UserCheck },
-    { label: 'Chambers Contact', href: '#contact', icon: Mail },
+  ];
+
+  // Full drawer links list including direct Contact
+  const drawerLinks = [
+    ...navLinks,
+    { label: 'Contact', href: '#contact', icon: Mail },
   ];
 
   return (
@@ -98,13 +103,13 @@ export default function Navbar() {
             </div>
           </a>
 
-          {/* Desktop Navigation Links (Compact, elegant, and perfectly sized) */}
-          <nav className="hidden xl:flex items-center gap-5 text-xs font-medium tracking-wider">
+          {/* Desktop Navigation Links (Single-word, clean, and perfectly spaced) */}
+          <nav className="hidden xl:flex items-center gap-5 lg:gap-6 text-xs font-medium tracking-wider">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="text-slate-300 hover:text-court-gold transition-colors relative py-1 group uppercase font-mono"
+                className="text-slate-300 hover:text-court-gold transition-colors relative py-1 group uppercase font-mono whitespace-nowrap"
               >
                 <span>{link.label}</span>
                 <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-court-gold group-hover:w-full transition-all duration-300"></span>
@@ -118,19 +123,19 @@ export default function Navbar() {
             <a
               href="/cv/Meklit_Tasew_CV.pdf"
               download="Meklit_Tasew_CV.pdf"
-              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-court-border/70 hover:border-court-gold/50 bg-court-card/40 text-slate-300 hover:text-court-gold text-xs font-mono transition-all"
-              title="Download Official Curriculum Vitae (PDF)"
+              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-court-border/70 hover:border-court-gold/50 bg-court-card/40 text-slate-300 hover:text-court-gold text-xs font-mono transition-all whitespace-nowrap"
+              title="Download Official Curriculum Vitae"
             >
               <FileDown className="w-3.5 h-3.5 text-court-gold" />
-              <span>CV (PDF)</span>
+              <span>CV</span>
             </a>
 
             {/* Direct Contact Button (Desktop) */}
             <a
               href="#contact"
-              className="hidden md:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-court-gold to-court-goldDark text-court-darkest font-semibold text-xs tracking-wider uppercase hover:brightness-110 transition-all shadow-[0_0_15px_rgba(200,164,93,0.25)]"
+              className="hidden md:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-court-gold to-court-goldDark text-court-darkest font-semibold text-xs tracking-wider uppercase hover:brightness-110 transition-all shadow-[0_0_15px_rgba(200,164,93,0.25)] whitespace-nowrap"
             >
-              <span>Chambers</span>
+              <span>Contact</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
 
@@ -190,7 +195,7 @@ export default function Navbar() {
 
               {/* Complete Section Navigation List */}
               <nav className="py-6 flex flex-col space-y-1">
-                {navLinks.map((link) => {
+                {drawerLinks.map((link) => {
                   const Icon = link.icon;
                   return (
                     <a
@@ -223,7 +228,7 @@ export default function Navbar() {
                   className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-court-gold/40 hover:border-court-gold bg-court-navy/50 hover:bg-court-navy text-court-goldLight font-crest text-xs tracking-wider uppercase transition-all shadow"
                 >
                   <FileDown className="w-4 h-4 text-court-gold" />
-                  <span>Download Curriculum Vitae (PDF)</span>
+                  <span>Download CV</span>
                 </a>
               </div>
             </div>

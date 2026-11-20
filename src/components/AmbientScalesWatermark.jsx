@@ -86,7 +86,7 @@ export default function AmbientScalesWatermark() {
           loop
           muted
           playsInline
-          poster="/videos/golden_pedestal_calm_poster.png"
+          poster="/videos/golden_pedestal_alpha_poster.png"
           className="w-full h-full object-contain pointer-events-none"
           style={{
             WebkitMaskImage: 'radial-gradient(circle 46% at 50% 50%, black 50%, transparent 92%)',
@@ -94,8 +94,8 @@ export default function AmbientScalesWatermark() {
             filter: 'brightness(0.92) contrast(1.05)',
           }}
         >
-          <source src="/videos/golden_pedestal_calm.webm" type="video/webm" />
-          <source src="/videos/golden_pedestal_calm.mp4" type="video/mp4" />
+          <source src="/videos/golden_pedestal_alpha.webm" type="video/webm" />
+          <source src="/videos/golden_pedestal_court_navy.mp4" type="video/mp4" />
         </video>
       </div>
     </div>

@@ -95,7 +95,7 @@ export default function AboutSection() {
                   <source srcSet="/images/standing-suit-portrait.webp" type="image/webp" />
                   <img
                     src="/images/standing-suit-portrait.jpg"
-                    alt="Judge Meklit Tasew Tabor in Executive Office Suit"
+                    alt="Assistant Judge Meklit Tasew Tabor in Executive Office Suit"
                     className="w-full h-auto aspect-[3/4] object-cover object-top group-hover:scale-105 transition-transform duration-700 filter contrast-[1.03]"
                   />
                 </picture>
@@ -134,7 +134,7 @@ export default function AboutSection() {
 
             <div className="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed font-light">
               <p>
-                Judge <strong className="text-slate-100 font-medium">Meklit Tasew Tabor</strong> exercises judicial and legal duties at the <strong className="text-slate-100 font-medium">Federal Supreme Court of Ethiopia</strong> in Addis Ababa. She conducts exhaustive statutory audits, examines complex trial transcripts and lower court judgments, and authors advisory opinions on complex civil, criminal, and commercial appeals.
+                <strong className="text-slate-100 font-medium">Assistant Judge Meklit Tasew Tabor</strong> exercises judicial and legal duties at the <strong className="text-slate-100 font-medium">Federal Supreme Court of Ethiopia</strong> in Addis Ababa. She conducts exhaustive statutory audits, examines complex trial transcripts and lower court judgments, and authors advisory opinions on complex civil, criminal, and commercial appeals.
               </p>
               
               <p>

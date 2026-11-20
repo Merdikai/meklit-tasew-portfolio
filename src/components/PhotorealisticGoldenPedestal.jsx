@@ -78,14 +78,14 @@ export default function PhotorealisticGoldenPedestal({ className = '', isBackgro
             : `perspective(1000px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) scale(${isHovered ? 1.03 : 1})`,
         }}
       >
-        {/* Seamless Photorealistic Video Loop (Pristine 720p HD, true pure black key, zero box boundaries) */}
+        {/* Seamless Photorealistic Video Loop (Pristine 720p HD, true transparent alpha & exact court-navy background match) */}
         <video
           ref={videoRef}
           autoPlay
           loop
           muted
           playsInline
-          poster="/videos/golden_pedestal_calm_poster.png"
+          poster="/videos/golden_pedestal_alpha_poster.png"
           onLoadedData={() => setIsVideoLoaded(true)}
           className="w-full h-full object-contain pointer-events-none transition-opacity duration-500"
           style={{
@@ -93,27 +93,28 @@ export default function PhotorealisticGoldenPedestal({ className = '', isBackgro
             WebkitMaskImage: 'radial-gradient(circle 46% at 50% 50%, black 50%, transparent 92%)',
             maskImage: 'radial-gradient(circle 46% at 50% 50%, black 50%, transparent 92%)',
             filter: isBackground
-              ? 'brightness(0.95) contrast(1.08)'
+              ? 'brightness(0.95) contrast(1.06)'
               : isHovered 
               ? 'brightness(1.0) drop-shadow(0 0 25px rgba(200,164,93,0.3))' 
               : 'brightness(0.92) drop-shadow(0 0 15px rgba(200,164,93,0.18))',
           }}
         >
-          <source src="/videos/golden_pedestal_calm.webm" type="video/webm" />
+          <source src="/videos/golden_pedestal_alpha.webm" type="video/webm" />
+          <source src="/videos/golden_pedestal_court_navy.mp4" type="video/mp4" />
           <source src="/videos/golden_pedestal_calm.mp4" type="video/mp4" />
         </video>
 
         {/* Fallback Poster Image if video is initializing */}
         {!isVideoLoaded && (
           <img
-            src="/videos/golden_pedestal_calm_poster.png"
+            src="/videos/golden_pedestal_alpha_poster.png"
             alt="Photorealistic Golden Pedestal with Scales of Justice"
             className="absolute inset-0 w-full h-full object-contain pointer-events-none"
             style={{
               mixBlendMode: 'screen',
               WebkitMaskImage: 'radial-gradient(circle 46% at 50% 50%, black 50%, transparent 92%)',
               maskImage: 'radial-gradient(circle 46% at 50% 50%, black 50%, transparent 92%)',
-              filter: isBackground ? 'brightness(0.95) contrast(1.08)' : 'brightness(0.92)',
+              filter: isBackground ? 'brightness(0.95) contrast(1.06)' : 'brightness(0.92)',
             }}
           />
         )}

@@ -55,7 +55,7 @@ export default function ContactSection() {
             <span>Chambers &amp; Professional Contact</span>
           </div>
           <h2 className="font-crest text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-100">
-            Connect with <span className="text-gold-gradient font-serif italic">Judge Meklit Tasew</span>
+            Connect with <span className="text-gold-gradient font-serif italic">Assistant Judge Meklit Tasew</span>
           </h2>
           <p className="text-slate-300 text-base sm:text-lg font-light leading-relaxed">
             Available for official judicial correspondence, academic legal research dialogue, conference panels, and professional inquiries.
@@ -221,7 +221,7 @@ export default function ContactSection() {
                   Transmit an Official Inquiry
                 </h3>
                 <p className="text-xs text-slate-300 font-light">
-                  Direct communication routed to Judge Meklit Tasew's desk.
+                  Direct communication routed to Assistant Judge Meklit Tasew's desk.
                 </p>
               </div>
 

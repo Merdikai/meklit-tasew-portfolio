@@ -83,11 +83,11 @@ export const workExperience = [
     skillsApplied: ["Interlocutory Rulings", "Civil & Criminal Case Management", "Evidence Synthesis", "Court Administration", "Bench Drafting"]
   },
   {
-    role: "Judge",
+    role: "Assistant Judge",
     institution: "Debay Tilat Gin Woreda Court",
     location: "Amhara National Regional State, Ethiopia",
     period: "2021 – 08 February 2024",
-    badge: "Trial Bench Judge",
+    badge: "Judicial Bench Officer",
     tier: "Regional Primary Court",
     description: "Presided independently over plenary court benches with full adjudicative authority, delivering final binding judgments in contentious civil, family, property, and criminal proceedings.",
     responsibilities: [
