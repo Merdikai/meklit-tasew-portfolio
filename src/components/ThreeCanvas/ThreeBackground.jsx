@@ -25,11 +25,12 @@ export default function ThreeBackground() {
 
     const renderer = new THREE.WebGLRenderer({ 
       alpha: true, 
-      antialias: true, 
+      antialias: false, // Antialiasing is unnecessary for soft bokeh points and saves massive fillrate 
       powerPreference: 'high-performance' 
     });
     renderer.setSize(window.innerWidth, window.innerHeight);
-    setupRealisticRenderer(renderer);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
+    renderer.shadowMap.enabled = false; // Background dust particles do not cast shadows
     container.appendChild(renderer.domElement);
 
     // Studio Environment for realistic metallic reflections
@@ -124,6 +125,7 @@ export default function ThreeBackground() {
 
     const animate = () => {
       animId = requestAnimationFrame(animate);
+      if (document.hidden) return;
       const elapsedTime = clock.getElapsedTime();
 
       // Smooth scroll interpolation
