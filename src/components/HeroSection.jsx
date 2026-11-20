@@ -21,7 +21,7 @@ export default function HeroSection() {
   return (
     <section
       id="overview"
-      className="relative min-h-screen pt-28 pb-16 flex flex-col justify-center overflow-hidden bg-radial-gradient from-court-dark/85 via-court-darkest to-court-darkest"
+      className="relative min-h-screen pt-28 pb-16 flex flex-col justify-center overflow-x-clip bg-radial-gradient from-court-dark/85 via-court-darkest to-court-darkest"
     >
       {/* Background Radial Glow */}
       <div className="absolute right-1/4 top-1/3 -translate-y-1/2 w-[750px] h-[500px] bg-court-gold/10 blur-[180px] pointer-events-none" />
@@ -157,12 +157,12 @@ export default function HeroSection() {
           <div className="lg:col-span-5 flex flex-col items-center justify-center relative">
             
             {/* Majestic Golden Pedestal Peeking Gracefully to the Right of the Portrait */}
-            <div className="absolute -right-16 sm:-right-24 md:-right-32 lg:-right-36 xl:-right-44 top-1/2 -translate-y-1/2 w-[540px] sm:w-[620px] lg:w-[760px] pointer-events-none opacity-[0.72] select-none z-0 mix-blend-screen filter drop-shadow-[0_0_80px_rgba(200,164,93,0.5)]">
+            <div className="absolute left-1/2 top-1/2 -translate-y-1/2 translate-x-[45px] sm:translate-x-[70px] lg:translate-x-[95px] xl:translate-x-[115px] w-[560px] sm:w-[640px] lg:w-[720px] pointer-events-none opacity-[0.95] select-none z-0 filter drop-shadow-[0_0_65px_rgba(200,164,93,0.5)]">
               <PhotorealisticGoldenPedestal isBackground={true} />
             </div>
 
             {/* Foreground Portrait Card (z-10) */}
-            <div className="relative z-10 w-full max-w-[460px] rounded-3xl bg-court-card/80 border border-court-gold/35 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9),0_0_35px_rgba(200,164,93,0.2)] p-3 backdrop-blur-md">
+            <div className="relative z-10 w-full max-w-[420px] sm:max-w-[440px] rounded-3xl bg-court-card/85 border border-court-gold/35 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9),0_0_35px_rgba(200,164,93,0.2)] p-3 backdrop-blur-md">
               
               {/* Photo Frame */}
               <div className="relative rounded-2xl overflow-hidden bg-court-darkest aspect-[4/5] group">

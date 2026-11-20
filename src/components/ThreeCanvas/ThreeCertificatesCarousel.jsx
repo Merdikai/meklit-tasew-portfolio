@@ -8,7 +8,15 @@ export default function ThreeCertificatesCarousel({ onSelectCert }) {
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isHovered, setIsHovered] = useState(false);
   const [mouseOffset, setMouseOffset] = useState({ x: 0, y: 0 });
+  const [isMobile, setIsMobile] = useState(false);
   const timerRef = useRef(null);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 640);
+    checkMobile();
+    window.addEventListener('resize', checkMobile, { passive: true });
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const total = certificatesAndHonors.length;
 
@@ -79,10 +87,11 @@ export default function ThreeCertificatesCarousel({ onSelectCert }) {
 
           if (!isVisible) return null;
 
-          // Spacious 3D positioning: expanded offset from 250px -> 360px
+          // Spacious 3D positioning: expanded offset from 250px -> 360px on desktop (260px on mobile)
           const rotateY = offset * 22 + (isActive ? mouseOffset.x * 0.4 : 0);
           const rotateX = isActive ? mouseOffset.y * 0.4 : 0;
-          const translateX = offset * 360;
+          const spacing = isMobile ? 260 : 360;
+          const translateX = offset * spacing;
           const translateZ = -Math.abs(offset) * 140 + (isActive ? 50 : 0);
           const scale = isActive ? 1.05 : isDirectNeighbor ? 0.86 : 0.70;
           const opacity = isActive ? 1.0 : isDirectNeighbor ? 0.65 : 0.28;

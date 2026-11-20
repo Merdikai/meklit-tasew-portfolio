@@ -85,8 +85,8 @@ export default function PhotorealisticGoldenPedestal({ className = '', isBackgro
           className="w-full h-full object-contain pointer-events-none transition-opacity duration-500"
           style={{
             mixBlendMode: 'screen',
-            WebkitMaskImage: 'radial-gradient(ellipse 65% 65% at 50% 50%, black 50%, transparent 92%)',
-            maskImage: 'radial-gradient(ellipse 65% 65% at 50% 50%, black 50%, transparent 92%)',
+            WebkitMaskImage: 'radial-gradient(ellipse 90% 85% at 50% 50%, black 75%, transparent 100%)',
+            maskImage: 'radial-gradient(ellipse 90% 85% at 50% 50%, black 75%, transparent 100%)',
             filter: isBackground
               ? 'brightness(1.06) contrast(1.14)'
               : isHovered 
@@ -107,8 +107,8 @@ export default function PhotorealisticGoldenPedestal({ className = '', isBackgro
             className="absolute inset-0 w-full h-full object-contain pointer-events-none"
             style={{
               mixBlendMode: 'screen',
-              WebkitMaskImage: 'radial-gradient(ellipse 65% 65% at 50% 50%, black 50%, transparent 92%)',
-              maskImage: 'radial-gradient(ellipse 65% 65% at 50% 50%, black 50%, transparent 92%)',
+              WebkitMaskImage: 'radial-gradient(ellipse 90% 85% at 50% 50%, black 75%, transparent 100%)',
+              maskImage: 'radial-gradient(ellipse 90% 85% at 50% 50%, black 75%, transparent 100%)',
             }}
           />
         )}
