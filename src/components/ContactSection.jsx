@@ -78,22 +78,22 @@ export default function ContactSection() {
                 href={personalInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between p-4 rounded-2xl bg-court-darkest/70 border border-court-border hover:border-[#0A66C2] transition-all group"
+                className="flex items-center justify-between p-4 rounded-2xl bg-court-darkest/70 border border-court-border hover:border-court-gold/60 transition-all group"
               >
                 <div className="flex items-center gap-3.5">
-                  <div className="w-11 h-11 rounded-xl bg-[#0A66C2]/15 border border-[#0A66C2]/40 flex items-center justify-center text-[#0A66C2] group-hover:scale-105 transition-transform">
+                  <div className="w-11 h-11 rounded-xl bg-court-gold/15 border border-court-gold/30 flex items-center justify-center text-court-gold group-hover:scale-105 transition-transform">
                     <Linkedin className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="font-crest text-sm font-bold text-slate-100 group-hover:text-cyan-300 transition-colors">
+                    <div className="font-crest text-sm font-bold text-slate-100 group-hover:text-court-goldLight transition-colors">
                       LinkedIn Professional Profile
                     </div>
                     <div className="text-xs text-court-muted font-mono">
-                      meklit-tasew-584397201
+                      Meklit Tasew
                     </div>
                   </div>
                 </div>
-                <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-white transition-colors" />
+                <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-court-gold transition-colors" />
               </a>
 
               {/* Telegram Direct Link */}
@@ -101,22 +101,22 @@ export default function ContactSection() {
                 href={personalInfo.telegram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between p-4 rounded-2xl bg-court-darkest/70 border border-court-border hover:border-[#229ED9] transition-all group"
+                className="flex items-center justify-between p-4 rounded-2xl bg-court-darkest/70 border border-court-border hover:border-court-gold/60 transition-all group"
               >
                 <div className="flex items-center gap-3.5">
-                  <div className="w-11 h-11 rounded-xl bg-[#229ED9]/15 border border-[#229ED9]/40 flex items-center justify-center text-[#229ED9] group-hover:scale-105 transition-transform">
+                  <div className="w-11 h-11 rounded-xl bg-court-gold/15 border border-court-gold/30 flex items-center justify-center text-court-gold group-hover:scale-105 transition-transform">
                     <Send className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="font-crest text-sm font-bold text-slate-100 group-hover:text-cyan-300 transition-colors">
-                      Telegram Direct Messaging
+                    <div className="font-crest text-sm font-bold text-slate-100 group-hover:text-court-goldLight transition-colors">
+                      Telegram Direct Channel
                     </div>
                     <div className="text-xs text-court-muted font-mono">
                       @meklit11
                     </div>
                   </div>
                 </div>
-                <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-white transition-colors" />
+                <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-court-gold transition-colors" />
               </a>
 
               {/* Official Email with Copy Action */}

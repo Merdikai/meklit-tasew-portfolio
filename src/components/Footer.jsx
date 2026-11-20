@@ -70,19 +70,19 @@ export default function Footer() {
                 href={personalInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:text-[#0A66C2] transition-colors"
+                className="flex items-center gap-2 text-slate-300 hover:text-court-gold transition-colors"
               >
-                <Linkedin className="w-3.5 h-3.5 text-[#0A66C2]" />
-                <span>LinkedIn</span>
+                <Linkedin className="w-3.5 h-3.5 text-court-gold" />
+                <span>LinkedIn Profile</span>
               </a>
 
               <a
                 href={personalInfo.telegram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:text-[#229ED9] transition-colors"
+                className="flex items-center gap-2 text-slate-300 hover:text-court-gold transition-colors"
               >
-                <Send className="w-3.5 h-3.5 text-[#229ED9]" />
+                <Send className="w-3.5 h-3.5 text-court-gold" />
                 <span>Telegram (@meklit11)</span>
               </a>
 

@@ -79,7 +79,7 @@ export default function AmbientScalesWatermark() {
       <div className="absolute w-[680px] lg:w-[880px] h-[680px] lg:h-[880px] rounded-full bg-court-gold/10 blur-[160px] pointer-events-none -translate-y-6" />
 
       {/* Atmospheric Scales of Justice Watermark */}
-      <div className="relative w-[500px] sm:w-[620px] lg:w-[760px] aspect-square flex items-center justify-center select-none mix-blend-screen filter drop-shadow-[0_0_35px_rgba(200,164,93,0.22)]">
+      <div className="relative w-[500px] sm:w-[620px] lg:w-[760px] aspect-square flex items-center justify-center select-none mix-blend-screen">
         <video
           ref={videoRef}
           autoPlay
@@ -89,9 +89,9 @@ export default function AmbientScalesWatermark() {
           poster="/videos/golden_pedestal_calm_poster.png"
           className="w-full h-full object-contain pointer-events-none"
           style={{
-            WebkitMaskImage: 'radial-gradient(ellipse 90% 85% at 50% 50%, black 65%, transparent 100%)',
-            maskImage: 'radial-gradient(ellipse 90% 85% at 50% 50%, black 65%, transparent 100%)',
-            filter: 'brightness(0.90) contrast(1.02)',
+            WebkitMaskImage: 'radial-gradient(circle 46% at 50% 50%, black 50%, transparent 92%)',
+            maskImage: 'radial-gradient(circle 46% at 50% 50%, black 50%, transparent 92%)',
+            filter: 'brightness(0.92) contrast(1.05)',
           }}
         >
           <source src="/videos/golden_pedestal_calm.webm" type="video/webm" />

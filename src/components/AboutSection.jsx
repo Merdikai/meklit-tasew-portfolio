@@ -156,7 +156,7 @@ export default function AboutSection() {
                 <div className="text-court-muted text-[10px] uppercase">Experience</div>
                 <div className="text-court-gold font-semibold mt-0.5">5+ Years Adjudication</div>
               </div>
-              <div className="p-3 rounded-xl bg-court-card/60 border border-court-border">
+              <div className="col-span-2 sm:col-span-1 p-3 rounded-xl bg-court-card/60 border border-court-border">
                 <div className="text-court-muted text-[10px] uppercase">Academic Pursuit</div>
                 <div className="text-cyan-300 font-semibold mt-0.5">Dual LL.M. Candidate</div>
               </div>

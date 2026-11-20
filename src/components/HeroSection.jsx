@@ -1,18 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { 
   Scale, 
   Award, 
-  GraduationCap, 
-  ArrowDown, 
   ExternalLink, 
   MapPin, 
-  FileDown, 
-  Send,
-  Linkedin,
-  Mail,
-  Sparkles,
-  Layers,
-  ChevronRight
+  Send, 
+  Linkedin, 
+  Mail, 
+  Sparkles, 
+  Layers, 
+  ChevronRight 
 } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 import PhotorealisticGoldenPedestal from './PhotorealisticGoldenPedestal';
@@ -84,70 +81,41 @@ export default function HeroSection() {
               Dedicated judicial officer with over five years of progressive adjudicative and legal practice across Ethiopia's federal and regional benches. Specializing in statutory interpretation, appellate and cassation review, and dual LL.M. scholarship in <strong className="font-medium text-slate-100">Business &amp; Property Law</strong> and <strong className="font-medium text-slate-100">International Human Rights Law</strong>.
             </p>
 
-            {/* Actions */}
-            <div className="pt-2 flex flex-wrap items-center gap-3 sm:gap-4">
-              <a
-                href="#experience"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-court-gold via-court-goldLight to-court-goldDark text-court-darkest font-crest font-bold text-xs sm:text-sm tracking-wider uppercase transition-all shadow-[0_4px_25px_rgba(200,164,93,0.35)] hover:scale-[1.02] hover:brightness-110"
-              >
-                <span>View Judicial Record</span>
-                <ArrowDown className="w-4 h-4" />
-              </a>
-
-              <a
-                href="#jurisprudence"
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-court-border hover:border-court-gold/60 bg-court-card/70 hover:bg-court-card text-slate-200 hover:text-court-gold text-xs sm:text-sm font-medium transition-all"
-              >
-                <GraduationCap className="w-4 h-4 text-court-gold" />
-                <span>LL.M. Theses &amp; Scholarship</span>
-              </a>
-
-              <a
-                href="/cv/Meklit_Tasew_CV.pdf"
-                download="Meklit_Tasew_CV.pdf"
-                className="inline-flex items-center gap-2 px-4 py-3 rounded-xl border border-court-border hover:border-court-gold/40 text-court-muted hover:text-slate-200 text-xs sm:text-sm font-mono transition-all"
-                title="Download Official Curriculum Vitae (PDF)"
-              >
-                <FileDown className="w-4 h-4 text-court-gold" />
-                <span>Curriculum Vitae</span>
-              </a>
-            </div>
-
-            {/* Quick Contacts Bar */}
-            <div className="pt-4 border-t border-court-border/50 flex flex-wrap items-center gap-y-3 gap-x-6 text-xs text-court-muted font-mono">
+            {/* Direct Judicial Channels (Harmonized court theme, concise, clean) */}
+            <div className="pt-2 flex flex-wrap items-center gap-2.5 sm:gap-3 text-xs font-mono">
               <a
                 href={personalInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-slate-300 hover:text-court-gold transition-colors group"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-court-border/70 bg-court-card/60 hover:bg-court-card hover:border-court-gold/60 text-slate-300 hover:text-court-goldLight transition-all group"
               >
-                <Linkedin className="w-3.5 h-3.5 text-[#0A66C2] group-hover:scale-110 transition-transform" />
-                <span>LinkedIn Profile</span>
-                <ExternalLink className="w-3 h-3 opacity-60" />
+                <Linkedin className="w-3.5 h-3.5 text-court-gold group-hover:scale-110 transition-transform" />
+                <span>LinkedIn</span>
+                <ExternalLink className="w-3 h-3 opacity-50" />
               </a>
 
               <a
                 href={personalInfo.telegram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-slate-300 hover:text-court-gold transition-colors group"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-court-border/70 bg-court-card/60 hover:bg-court-card hover:border-court-gold/60 text-slate-300 hover:text-court-goldLight transition-all group"
               >
-                <Send className="w-3.5 h-3.5 text-[#229ED9] group-hover:scale-110 transition-transform" />
-                <span>Telegram (@meklit11)</span>
-                <ExternalLink className="w-3 h-3 opacity-60" />
+                <Send className="w-3.5 h-3.5 text-court-gold group-hover:scale-110 transition-transform" />
+                <span>Telegram</span>
+                <ExternalLink className="w-3 h-3 opacity-50" />
               </a>
 
               <a
                 href={`mailto:${personalInfo.email}`}
-                className="inline-flex items-center gap-1.5 text-slate-300 hover:text-court-gold transition-colors group"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-court-border/70 bg-court-card/60 hover:bg-court-card hover:border-court-gold/60 text-slate-300 hover:text-court-goldLight transition-all group"
               >
                 <Mail className="w-3.5 h-3.5 text-court-gold group-hover:scale-110 transition-transform" />
-                <span>{personalInfo.email}</span>
+                <span>Email</span>
               </a>
 
-              <div className="inline-flex items-center gap-1.5 text-slate-400">
-                <MapPin className="w-3.5 h-3.5 text-court-gold" />
-                <span>Addis Ababa, Ethiopia</span>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-court-border/40 bg-court-darkest/40 text-slate-400">
+                <MapPin className="w-3.5 h-3.5 text-court-gold/80" />
+                <span>Addis Ababa</span>
               </div>
             </div>
 
@@ -156,8 +124,8 @@ export default function HeroSection() {
           {/* Right Column: Executive Office Portrait with Golden Scales Peeking on the Right */}
           <div className="lg:col-span-5 flex flex-col items-center justify-center relative">
             
-            {/* Majestic Golden Pedestal Peeking Gracefully to the Right of the Portrait (Subdued, serene golden glow) */}
-            <div className="absolute left-1/2 top-1/2 -translate-y-1/2 translate-x-[45px] sm:translate-x-[70px] lg:translate-x-[95px] xl:translate-x-[115px] w-[540px] sm:w-[620px] lg:w-[680px] pointer-events-none opacity-[0.80] select-none z-0 filter drop-shadow-[0_0_35px_rgba(200,164,93,0.22)]">
+            {/* Majestic Golden Pedestal Peeking Gracefully to the Right of the Portrait (Subdued, serene golden glow, zero box) */}
+            <div className="absolute left-1/2 top-1/2 -translate-y-1/2 translate-x-0 sm:translate-x-[60px] lg:translate-x-[95px] xl:translate-x-[115px] w-[340px] sm:w-[480px] lg:w-[620px] pointer-events-none opacity-[0.80] select-none z-0">
               <PhotorealisticGoldenPedestal isBackground={true} />
             </div>
 
