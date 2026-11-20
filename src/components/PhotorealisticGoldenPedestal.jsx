@@ -88,7 +88,7 @@ export default function PhotorealisticGoldenPedestal({ className = '', isBackgro
             WebkitMaskImage: 'radial-gradient(ellipse 65% 65% at 50% 50%, black 50%, transparent 92%)',
             maskImage: 'radial-gradient(ellipse 65% 65% at 50% 50%, black 50%, transparent 92%)',
             filter: isBackground
-              ? 'brightness(0.92) contrast(1.08)'
+              ? 'brightness(1.06) contrast(1.14)'
               : isHovered 
               ? 'brightness(1.08) drop-shadow(0 0 35px rgba(234,179,8,0.4))' 
               : 'brightness(1.02) drop-shadow(0 0 20px rgba(200,164,93,0.25))',

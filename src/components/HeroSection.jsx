@@ -26,11 +26,6 @@ export default function HeroSection() {
       {/* Background Radial Glow */}
       <div className="absolute right-1/4 top-1/3 -translate-y-1/2 w-[750px] h-[500px] bg-court-gold/10 blur-[180px] pointer-events-none" />
 
-      {/* Majestic Ambient Golden Pedestal Background Watermark */}
-      <div className="absolute -right-10 lg:right-4 top-1/2 -translate-y-1/2 w-[550px] lg:w-[720px] pointer-events-none opacity-[0.38] select-none z-0 overflow-hidden mix-blend-screen filter drop-shadow-[0_0_60px_rgba(200,164,93,0.3)]">
-        <PhotorealisticGoldenPedestal isBackground={true} />
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
         
         {/* Top Split: Title & Golden Pedestal Centerpiece */}
@@ -158,9 +153,16 @@ export default function HeroSection() {
 
           </div>
 
-          {/* Right Column: Executive Office Portrait in Foreground */}
+          {/* Right Column: Executive Office Portrait with Golden Scales Peeking on the Right */}
           <div className="lg:col-span-5 flex flex-col items-center justify-center relative">
-            <div className="relative w-full max-w-[460px] rounded-3xl bg-court-card/70 border border-court-gold/30 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9),0_0_35px_rgba(200,164,93,0.15)] p-3 backdrop-blur-md">
+            
+            {/* Majestic Golden Pedestal Peeking Gracefully to the Right of the Portrait */}
+            <div className="absolute -right-16 sm:-right-24 md:-right-32 lg:-right-36 xl:-right-44 top-1/2 -translate-y-1/2 w-[540px] sm:w-[620px] lg:w-[760px] pointer-events-none opacity-[0.72] select-none z-0 mix-blend-screen filter drop-shadow-[0_0_80px_rgba(200,164,93,0.5)]">
+              <PhotorealisticGoldenPedestal isBackground={true} />
+            </div>
+
+            {/* Foreground Portrait Card (z-10) */}
+            <div className="relative z-10 w-full max-w-[460px] rounded-3xl bg-court-card/80 border border-court-gold/35 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9),0_0_35px_rgba(200,164,93,0.2)] p-3 backdrop-blur-md">
               
               {/* Photo Frame */}
               <div className="relative rounded-2xl overflow-hidden bg-court-darkest aspect-[4/5] group">
