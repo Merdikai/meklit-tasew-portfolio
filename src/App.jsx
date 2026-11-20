@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import CustomCursor from './components/CustomCursor';
 import ThreeBackground from './components/ThreeCanvas/ThreeBackground';
+import AmbientScalesWatermark from './components/AmbientScalesWatermark';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
 import JurisprudenceSection from './components/JurisprudenceSection';
@@ -18,8 +19,11 @@ export default function App() {
       {/* Interactive Cursor Spotlight */}
       <CustomCursor />
 
-      {/* Persistent 3D Floating Polyhedra & Golden Dust Canvas */}
+      {/* Persistent 3D Golden Dust Canvas */}
       <ThreeBackground />
+
+      {/* Persistent Ambient Scales of Justice Watermark across all sections */}
+      <AmbientScalesWatermark />
 
       {/* Navigation Bar */}
       <Navbar />
