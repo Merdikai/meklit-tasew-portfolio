@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  Scale, 
-  FileDown, 
-  Menu, 
-  X, 
-  ArrowUpRight, 
-  ShieldCheck, 
-  BookOpen, 
-  Briefcase, 
-  Award, 
-  Sparkles, 
-  UserCheck, 
-  Mail, 
-  Send, 
-  Linkedin, 
-  MapPin, 
-  ExternalLink 
+import {
+  Scale,
+  FileDown,
+  Menu,
+  X,
+  ArrowUpRight,
+  ShieldCheck,
+  BookOpen,
+  Briefcase,
+  Award,
+  Sparkles,
+  UserCheck,
+  Mail,
+  Send,
+  Linkedin,
+  MapPin,
+  ExternalLink
 } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 
@@ -76,14 +76,13 @@ export default function Navbar() {
       </div>
 
       <header
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-          scrolled
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled
             ? 'bg-court-darkest/95 backdrop-blur-md border-b border-court-gold/15 shadow-2xl py-3'
             : 'bg-transparent py-4 sm:py-5'
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          
+
           {/* Brand Seal */}
           <a
             href="#overview"
@@ -156,7 +155,7 @@ export default function Navbar() {
       {/* Slide-over Sidebar Drawer & Backdrop */}
       {isSidebarOpen && (
         <div className="fixed inset-0 z-[100] flex justify-end">
-          
+
           {/* Backdrop Overlay */}
           <div
             className="fixed inset-0 bg-black/75 backdrop-blur-sm transition-opacity animate-in fade-in duration-300"
@@ -166,7 +165,7 @@ export default function Navbar() {
 
           {/* Drawer Pane */}
           <aside className="relative w-full max-w-sm sm:max-w-md h-full bg-court-darkest border-l border-court-gold/30 shadow-[-10px_0_40px_rgba(0,0,0,0.85)] flex flex-col justify-between p-6 sm:p-8 z-10 overflow-y-auto animate-in slide-in-from-right duration-300">
-            
+
             {/* Top Bar inside Drawer */}
             <div>
               <div className="flex items-center justify-between pb-6 border-b border-court-border/60">

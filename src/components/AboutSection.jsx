@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { 
-  Scale, 
-  Shield, 
-  Gavel, 
-  Building, 
-  CheckCircle2, 
-  Languages, 
-  MapPin, 
-  Calendar, 
+import {
+  Scale,
+  Shield,
+  Gavel,
+  Building,
+  CheckCircle2,
+  Languages,
+  MapPin,
+  Calendar,
   Award,
   ArrowRight,
   X,
@@ -68,7 +68,7 @@ export default function AboutSection() {
   return (
     <section id="about" className="py-24 relative bg-court-dark/70 border-t border-b border-court-border/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-court-gold/30 bg-court-card text-court-gold text-xs font-mono tracking-widest uppercase shadow">
@@ -85,7 +85,7 @@ export default function AboutSection() {
 
         {/* Narrative & Dual Photos Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-16">
-          
+
           {/* Left Column: Dignified Portrait in Executive Suit */}
           <div className="lg:col-span-5 flex justify-center">
             <div className="relative w-full max-w-[390px] rounded-[32px] p-2.5 bg-court-card/70 border border-court-gold/30 shadow-[0_25px_60px_-10px_rgba(0,0,0,0.85),0_0_25px_rgba(200,164,93,0.15)] backdrop-blur-md group">
@@ -136,7 +136,7 @@ export default function AboutSection() {
               <p>
                 <strong className="text-slate-100 font-medium">Assistant Judge Meklit Tasew Tabor</strong> exercises judicial and legal duties at the <strong className="text-slate-100 font-medium">Federal Supreme Court of Ethiopia</strong> in Addis Ababa. She conducts exhaustive statutory audits, examines complex trial transcripts and lower court judgments, and authors advisory opinions on complex civil, criminal, and commercial appeals.
               </p>
-              
+
               <p>
                 Prior to the apex court, she was appointed as an <strong className="text-slate-100 font-medium">Assistant Judge at the Federal First Instance Court</strong>, where her high-speed docket turnaround and judicial draftsmanship were honored with the <strong className="text-court-gold font-medium">Certificate of High Performance (2017 E.C.)</strong>.
               </p>
